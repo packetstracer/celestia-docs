@@ -17,10 +17,10 @@ Validator nodes allow you to participate in consensus in the Celestia network.
 The following hardware minimum requirements are recommended for running the
 validator node:
 
-* Memory: **8 GB RAM**
-* CPU: **6 cores**
-* Disk: **500 GB SSD Storage**
-* Bandwidth: **1 Gbps for Download/1 Gbps for Upload**
+- Memory: **8 GB RAM**
+- CPU: **6 cores**
+- Disk: **500 GB SSD Storage**
+- Bandwidth: **1 Gbps for Download/1 Gbps for Upload**
 
 ## Setting up your validator node
 
@@ -49,7 +49,7 @@ To initialize the network pick a "node-name" that describes your
 node. The `--chain-id` parameter we are using here is **<InlineText constant={constants.mochaChainId} />**. Keep in
 mind that this might change if a new testnet is deployed.
 
-````mdx-code-block
+```mdx-code-block
 <pre><code>
 celestia-appd init "node-name" --chain-id {constants.mochaChainId}
 </code></pre>
@@ -59,7 +59,7 @@ Copy the `genesis.json` file. For mocha we are using:
 <pre><code>
 cp $HOME/networks/{constants.mochaChainId}/genesis.json $HOME/.celestia-app/config
 </code></pre>
-````
+```
 
 Set seeds and peers:
 
@@ -181,7 +181,7 @@ celestia-appd start
 ```
 
 Follow the tutorial on setting up `celestia-app` as a background process
-with SystemD [here]( ../systemd).
+with SystemD [here](../systemd).
 
 ### Wallet
 
@@ -218,7 +218,7 @@ example you can run:
 ```bash
 celestia-appd tx staking delegate \
     celestiavaloper1q3v5cugc8cdpud87u4zwy0a74uxkk6u4q4gx4p 1000000utia \
-    --from=$VALIDATOR_WALLET --chain-id=mocha
+    --from=$VALIDATOR_WALLET --chain-id=mocha-4
 ```
 
 If successful, you should see a similar output as:
@@ -357,7 +357,7 @@ celestia-appd tx staking create-validator \
     --amount=1000000utia \
     --pubkey=$(celestia-appd tendermint show-validator) \
     --moniker=$MONIKER \
-    --chain-id=mocha \
+    --chain-id=mocha-4\
     --commission-rate=0.1 \
     --commission-max-rate=0.2 \
     --commission-max-change-rate=0.01 \
@@ -439,7 +439,7 @@ celestia-appd tx staking create-validator \
     --amount=1000000utia \
     --pubkey=$(celestia-appd tendermint show-validator) \
     --moniker=$MONIKER \
-    --chain-id=mocha \
+    --chain-id=mocha-4 \
     --commission-rate=0.1 \
     --commission-max-rate=0.2 \
     --commission-max-change-rate=0.01 \
