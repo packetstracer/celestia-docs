@@ -142,9 +142,9 @@ cd $HOME<br/>
 rm -rf ~/.celestia-app/data<br/>
 mkdir -p ~/.celestia-app/data<br/>
 SNAP_NAME=$(curl -s https://snaps.qubelabs.io/celestia/ | \<br/>
-    egrep -o ">{constants.mochaChainId}.*tar" | tr -d ">")<br/>
+&nbsp; egrep -o ">{constants.mochaChainId}.*tar" | tr -d ">")<br/>
 wget -O - https://snaps.qubelabs.io/celestia/$&#123;SNAP_NAME&#125; | tar xf - \<br/>
-    -C ~/.celestia-app/data/<br/>
+&nbsp; -C ~/.celestia-app/data/<br/>
 </code></pre>
 
 </TabItem>
